@@ -27,7 +27,7 @@ data "aws_availability_zones" "available" {
 # Data block to retrieve the default VPC id 
 data "aws_vpc" "default" {
   default = true
-  
+
   # tags = {
   #   Name = "default vpc"
   # }
@@ -80,7 +80,7 @@ resource "aws_key_pair" "key_pair_jal_patel" {
 
 # provisioning a public subnet in the default VPC
 # resource "aws_subnet" "CLO835_Week_09_Assignment_02_subnet_01" {
-#   vpc_id            = aws_vpc.default.id
+#   vpc_id            = data.aws_vpc.default
 #   cidr_block        = "172.31.0.0/24"
 #   availability_zone = "us-east-1a"
 
@@ -143,13 +143,13 @@ resource "aws_security_group" "CLO835_Week_09_Assignment_02_sg" {
   }
 }
 
-# resource "aws_ecr_repository" "CLO835_Week_09_Assignment_02_ecr_APP_repository" {
-#   name = "clo835_Week_09_assignment1_app"
-# }
+resource "aws_ecr_repository" "CLO835_Week_09_Assignment_02_ecr_APP_repository" {
+  name = "clo835_Week_09_assignment1_app"
+}
 
-# resource "aws_ecr_repository" "CLO835_Week_09_Assignment_02_ecr_DB_repository" {
-#   name = "clo835_Week_09_assignment1_db"
-# }
+resource "aws_ecr_repository" "CLO835_Week_09_Assignment_02_ecr_DB_repository" {
+  name = "clo835_Week_09_assignment1_db"
+}
 
 # Elastic IP
 resource "aws_eip" "CLO835_Week_09_Assignment_02_static_eip" {
