@@ -11,3 +11,5 @@ output "default_tags" {
 output "prefix" {
   value     = "Assignment_02"
 }
+
+# this comment was added to test the workflow.
