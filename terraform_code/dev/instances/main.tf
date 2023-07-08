@@ -144,11 +144,11 @@ resource "aws_security_group" "CLO835_week_09_assignment_02_sg" {
 }
 
 resource "aws_ecr_repository" "CLO835_week_09_assignment_02_ecr_APP_repository" {
-  name = "clo835_week_09_assignment1_app"
+  name = "clo835_week_09_assignment_02_app"
 }
 
 resource "aws_ecr_repository" "CLO835_week_09_assignment_02_ecr_DB_repository" {
-  name = "clo835_week_09_assignment1_db"
+  name = "clo835_week_09_assignment_02_db"
 }
 
 # Elastic IP
